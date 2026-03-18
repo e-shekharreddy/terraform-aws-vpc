@@ -20,11 +20,6 @@ locals {
         },
         var.igw_tags,
     )
-    public_subnet_cidrs_final_tags = merge(
-        local.common_tags,
-        {
-            name = "${var.project}-${var.environment}"
-        },
-        var.public_subnet_cidrs_tags 
-    )
+    az_names = slice(data.aws_availability_zones.available.names, 0, 2)
+
 }
