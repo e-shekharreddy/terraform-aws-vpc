@@ -12,3 +12,14 @@ resource "aws_internet_gateway" "main" {
   tags = local.igw_final_tags
   
 }
+
+# # public subnets
+# resource "aws_subnet" "main" {
+#     count = length(var.public_subnet_cidrs)
+#     vpc_id     = aws_vpc.main.id
+#     cidr_block = var.public_subnet_cidrs[count.index]
+#     availability_zone = 
+
+#   tags = local.public_subnet_cidrs_final_tags
+# }
+
