@@ -26,7 +26,7 @@ resource "aws_subnet" "public" {
 
         # roboshop-dev-public-us-east-1a
         {
-            name = "${var.project}-${var.environment}-public-${local.az_names[count.index]}"
+            Name = "${var.project}-${var.environment}-public-${local.az_names[count.index]}"
         },
         var.public_subnet_cidrs_tags 
     )
@@ -45,7 +45,7 @@ resource "aws_subnet" "private" {
 
         # roboshop-dev-private-us-east-1a
         {
-            name = "${var.project}-${var.environment}-private-${local.az_names[count.index]}"
+            Name = "${var.project}-${var.environment}-private-${local.az_names[count.index]}"
         },
         var.private_subnet_cidrs_tags 
     )
@@ -64,7 +64,7 @@ resource "aws_subnet" "database" {
 
         # roboshop-dev-database-us-east-1a
         {
-            name = "${var.project}-${var.environment}-database-${local.az_names[count.index]}"
+            Name = "${var.project}-${var.environment}-database-${local.az_names[count.index]}"
         },
         var.database_subnet_cidrs_tags 
     )
@@ -78,7 +78,7 @@ resource "aws_route_table" "public" {
 
         # roboshop-dev-public
         {
-            name = "${var.project}-${var.environment}-public"
+            Name = "${var.project}-${var.environment}-public"
         },
         var.public_route_table_tags
   )
@@ -92,7 +92,7 @@ resource "aws_route_table" "private" {
 
         # roboshop-dev-private
         {
-            name = "${var.project}-${var.environment}-private"
+            Name = "${var.project}-${var.environment}-private"
         },
         var.private_route_table_tags
   )
@@ -106,7 +106,7 @@ resource "aws_route_table" "database" {
 
         # roboshop-dev-database
         {
-            name = "${var.project}-${var.environment}-database"
+            Name = "${var.project}-${var.environment}-database"
         },
         var.database_route_table_tags
   )
@@ -125,7 +125,7 @@ resource "aws_eip" "nat" {
 
         # roboshop-dev-nat
         {
-            name = "${var.project}-${var.environment}-nat"
+            Name = "${var.project}-${var.environment}-nat"
         },
         var.eip_tags
   )
@@ -140,7 +140,7 @@ resource "aws_nat_gateway" "main" {
 
         # roboshop-dev-nat
         {
-            name = "${var.project}-${var.environment}"
+            Name = "${var.project}-${var.environment}"
         },
         var.nat_gateway_tags
   )
